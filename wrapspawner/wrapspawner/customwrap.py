@@ -4,7 +4,6 @@ import re
 import urllib.request
 from types import coroutine
 
-import nest_asyncio
 from jupyterhub.spawner import LocalProcessSpawner, Spawner
 from rich import inspect
 from tornado import concurrent, gen
@@ -280,6 +279,7 @@ class CustomDockerProfilesSpawner(WrapSpawner):
     def options_form(self):
         # --------------------- If using nested coroutines ---------------------
         # Used to call get_auth_state coroutine inside the tornado IOLoop (asyncio wrapper)
+        # import nest_asyncio
         # nest_asyncio.apply()
 
         # Get the IOLoop and run the get_auth_state coroutine
