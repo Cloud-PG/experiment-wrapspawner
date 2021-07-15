@@ -8,7 +8,7 @@ RUN apt install -y git python3 python3-pip npm nodejs
 RUN npm install -g configurable-http-proxy
 RUN python3 -m pip install jupyterlab jupyterhub notebook
 RUN python3 -m pip install dockerspawner
-RUN python3 -m pip install nest_asyncio
+RUN python3 -m pip install nest_asyncio # Optional
 RUN python3 -m pip install rich
 
 RUN /bin/bash -c "mkdir -p /usr/local/share/jupyterhub"
